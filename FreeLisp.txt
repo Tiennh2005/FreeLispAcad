@@ -1,0 +1,1 @@
+(defun _NHT:get (msg arg / sel)(princ msg)(setvar 'nomutt 1)(setq sel (vl-catch-all-apply 'ssget arg))(setvar 'nomutt 0)(if (not (vl-catch-all-error-p sel)) sel))
