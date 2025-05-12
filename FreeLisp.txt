@@ -1,1 +1,2 @@
 (defun _NHT:get (msg arg / sel)(princ msg)(setvar 'nomutt 1)(setq sel (vl-catch-all-apply 'ssget arg))(setvar 'nomutt 0)(if (not (vl-catch-all-error-p sel)) sel))
+(defun dataview (p1 p2 / wh cen cenmodel)(setq wh (mapcar 'abs (mapcar '- p1 p2)))(if (not (equal 0.0 (apply 'min wh) 1e-8))(progn (setq cen (mapcar '(lambda (x y) (* (+ x y) 0.5)) p1 p2))(setq cenmodel (trans cen 3 2))(setq cenmodel (trans cenmodel 2 1))(setq cenmodel (trans cenmodel 1 0))(append (list cen) wh ))))
