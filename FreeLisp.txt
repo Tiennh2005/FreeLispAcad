@@ -4,7 +4,7 @@ LispNHT (defun LM:acdoc nil(eval (list 'defun 'LM:acdoc 'nil (vla-get-activedocu
 LispNHT (defun _NHT:get (msg arg / sel)(princ msg)(setvar 'nomutt 1)(setq sel (vl-catch-all-apply 'ssget arg))(setvar 'nomutt 0)(if (not (vl-catch-all-error-p sel)) sel))
 LispNHT (defun dataview (p1 p2 / wh cen cenmodel data)(setq wh (mapcar 'abs (mapcar '- p1 p2)))(if (not (equal 0.0 (apply 'min wh) 1e-8))(progn (setq cen (mapcar '(lambda (x y) (* (+ x y) 0.5)) p1 p2))(setq cenmodel (trans (trans (trans cen 3 2) 2 1) 1 0))(setq data (append (list cen) wh (list cenmodel)))))data)
 LispNHT (defun c:aa () 
-(alert"aaaa")
+(alert"aaaa");mo ta
 (alert"AAA")
 )
 LispNHT (defun c:bb () (alert"bbbbbb"))
